@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopiuj do Schowka z Powiadomieniem</title>
+    <style>
+        /* Dodatkowy styl dla bloku powiadomienia */
+        #powiadomienie {
+            display: none;
+            position: fixed;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="skopiujDoSchowka()">Skopiuj do Schowka</button>
+
+<!-- Kontener dla bloku powiadomienia -->
+<div id="powiadomienie"></div>
+
+<script>
+    function skopiujDoSchowka() {
+        var tekstDoSkopiowania = "To jest tekst do skopiowania.";
+
+        var textarea = document.createElement("textarea");
+        textarea.value = tekstDoSkopiowania;
+        document.body.appendChild(textarea);
+
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+
+        document.execCommand("copy");
+
+        document.body.removeChild(textarea);
+
+        // Utwórz blok powiadomienia
+        var powiadomienie = document.getElementById('powiadomienie');
+        powiadomienie.innerText = "Skopiowano tekst!";
+        
+        // Ustaw pozycję bloku powiadomienia przy myszce
+        document.addEventListener('mousemove', function(event) {
+            powiadomienie.style.top = (event.clientY - 20) + 'px';
+            powiadomienie.style.left = (event.clientX + 20) + 'px';
+        });
+
+        // Wyświetl blok powiadomienia
+        powiadomienie.style.display = 'block';
+
+        // Ukryj blok powiadomienia po pewnym czasie
+        setTimeout(function() {
+            powiadomienie.style.opacity = '0';
+            setTimeout(function() {
+                powiadomienie.style.display = 'none';
+                powiadomienie.style.opacity = '1';
+            }, 500);
+        }, 2000); // Ukryj po 2 sekundach
+    }
+
+    // Dodatkowe zdarzenie, aby zablokować domyślne działanie przeglądarki
+    document.addEventListener('copy', function(event) {
+        event.preventDefault();
+    });
+</script>
+
+</body>
+</html>

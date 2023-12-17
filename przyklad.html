@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Item Box</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .projekt1 {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .projekt1obraz {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .projekt1tresc {
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            color: #333;
+        }
+
+        @media screen and (max-width: 600px) {
+            .projekt1 {
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="projekt1">
+    <img class="projekt1obraz" src="media/coding.jpg" alt="Sample Image">
+    <div class="projekt1tresc">
+        <h2>Nagłówek</h2>
+        <p>Treść item boxa. Możesz tutaj umieścić różne informacje lub opisy.</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+strona:
+
+wielkosc h1 technologie i ustawienie nad blokami
+naprawienie bugu z obramowaniem blokow
+responsywne skalowanie sie dlugosci pierwszej sekcji
+wysrodkowac tekst pierwsza sekcja
+pododawac odnosniki
+powiekszyc certyfikat
+position sticky dla menu
+projekty w jednej lini z przesuwaniem dla wersji pelnoekranowej
+paralaxy i animacje
+
+
+
+wrzucic na hosting/chmure
+popatrzec na te emaile dla wuja
+prysznic
